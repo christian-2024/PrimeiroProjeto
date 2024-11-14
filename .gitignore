@@ -1,0 +1,26 @@
+# Ignore arquivos e pastas de build
+bin/
+obj/
+
+# Ignore configurações locais do Visual Studio
+.vs/
+
+# Ignore arquivos temporários do sistema
+*.tmp
+*.temp
+*.log
+
+# Ignore arquivos do Visual Studio Code
+.vscode/
+
+# Ignore arquivos gerados pela depuração
+*.pdb
+*.exe
+*.dll
+
+# Ignore arquivos de sourcelink gerados
+*.sourcelink.json
+
+# Ignore outros arquivos temporários
+[Tt]humbs.db
+[Dd]esktop.ini

@@ -2,15 +2,14 @@
 
 namespace PrimeiroProjeto {
 
-    public class Program : CalculoSimples{
+    public class Program : CalculoSimples {
 
         private static void Main(string[] args) {
-
             Program executar = new Program();
 
             executar.ExecultarAulaDois();
-            
         }
+
         public void Execultar() {
             double x = 10.2345;
             int y = 32;
@@ -54,30 +53,50 @@ namespace PrimeiroProjeto {
             Console.WriteLine("Aula Tres");
             simples.aulaTres();
 
-
-
             Console.ReadLine();
         }
 
         public void ExecultarAulaDois() {
-
             double largura, compimento, precoMetroQuatrado, area, preco;
 
-            Console.WriteLine("Digite o valor da largura:");
-            largura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            while (true) {
+                Console.WriteLine("Digite o valor da largura:");
+                string input = Console.ReadLine();
+                bool Numeric = double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out largura);
 
-            Console.WriteLine("Digite o valor do comprimento");
-            compimento = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                if (Numeric) {
+                    break;
+                } else {
+                    Console.WriteLine("Valor inválido! Por favor insira um número.");
+                }
+            }
+            while (true) {
+                Console.WriteLine("Digite o valor do comprimento");
+                string input = Console.ReadLine();
+                bool Numeric = double.TryParse(input, NumberStyles.Float,CultureInfo.InvariantCulture, out compimento);
+                if (Numeric) {
+                    break;
+                } else {
+                    Console.WriteLine("Valor inválido! Por favor insira um número.");
 
-            Console.WriteLine("Digite o valor do metro quatrado");
-            precoMetroQuatrado = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                }
+            }
+            while (true) {
+                Console.WriteLine("Digite o valor do metro quatrado");
+                string input = Console.ReadLine();
+                bool Numeric = double.TryParse(input, NumberStyles.Float, CultureInfo.InvariantCulture, out precoMetroQuatrado);
+                if (Numeric) {
+                    break;
+                } else {
+                    Console.WriteLine("Valor inválido! Por favor insira um número.");
 
+                }
+            }
             area = largura * compimento;
             preco = area * precoMetroQuatrado;
 
             Console.WriteLine("Area do metro quatrado: " + area.ToString("F2", CultureInfo.InvariantCulture) + "\n" +
                 "Preço em metros quadrados: " + preco.ToString("F2", CultureInfo.InvariantCulture));
-
         }
     }
 }
